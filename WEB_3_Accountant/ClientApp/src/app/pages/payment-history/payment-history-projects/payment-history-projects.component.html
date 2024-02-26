@@ -1,0 +1,21 @@
+<div class="responsive-paddings">
+  <dx-chart id="projects-payment-chart" [dataSource]="weekProjects">
+    <dxo-size [height]="200"></dxo-size>
+    <dxo-adaptive-layout [width]="450"></dxo-adaptive-layout>
+    <dxo-zoom-and-pan argumentAxis="both"></dxo-zoom-and-pan>
+    <dxo-scroll-bar [visible]="true"></dxo-scroll-bar>
+    <dxo-tooltip
+      [enabled]="true"
+      format="currency"
+      [customizeTooltip]="customizeTooltip"
+    ></dxo-tooltip>
+    <dxi-series
+      argumentField="name"
+      valueField="totalSum"
+      name="Projects"
+      type="bar"
+      color="#ff5722"
+    >
+    </dxi-series>
+  </dx-chart>
+</div>

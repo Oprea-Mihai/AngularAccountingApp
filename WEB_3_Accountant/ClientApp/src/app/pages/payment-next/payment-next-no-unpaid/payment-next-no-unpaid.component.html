@@ -1,0 +1,14 @@
+<div class="align-items">
+  <h4>All payments are up to date.</h4>
+  <p>Please import more data if you want to make the payment for next week.</p>
+  <div *ngIf="weekDetails.startDate != null">
+    <p>Last week payment: {{ weekDetails.startDate | date: "dd.MM.yy" }} - {{ weekDetails.endDate | date: "dd.MM.yy" }} with a total {{ weekDetails.totalGrossAmount }} of and after tax {{ weekDetails.totalNetAmount }}.</p>
+  </div>
+  <dx-button
+    type="default"
+    text="back"
+    stylingMode="outlined"
+    [routerLink]="['/']"
+  >
+  </dx-button>
+</div>

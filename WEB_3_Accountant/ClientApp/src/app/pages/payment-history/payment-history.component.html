@@ -1,0 +1,51 @@
+<h2 class="content-block">Payment history</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <div class="dx-fieldset">
+      <dx-responsive-box>
+        <dxi-row></dxi-row>
+
+        <dxi-col [ratio]="2"></dxi-col>
+        <dxi-col [ratio]="3"></dxi-col>
+        <dxi-col [ratio]="5"></dxi-col>
+        <dxi-item class="week-choose-box">
+          <dxi-location [row]="0" [col]="0"></dxi-location>
+          <div class="dx-fieldset-header week-choose">Choose the week</div>
+        </dxi-item>
+        <dxi-item>
+          <dxi-location [row]="0" [col]="1"></dxi-location>
+          <div class="dx-field">
+            <div class="dx-field-value">
+              <dx-select-box
+                label="Week period"
+                [dataSource]="weekSelect"
+                (onValueChanged)="onValueChanged($event)"
+                [(value)] = "weekSelected"
+                [searchEnabled]="true"
+              ></dx-select-box>
+            </div>
+          </div>
+        </dxi-item>
+      </dx-responsive-box>
+    </div>
+    <div>
+      <h5><b>Week total gross: {{ weekHistory.totalGrossAmount }} and total net: {{ weekHistory.totalNetAmount }}</b></h5>
+    </div>
+    <div id="tabs">
+      <dx-tabs
+        #paySelector
+        [dataSource]="tabs"
+        [selectedIndex]="0"
+        (onItemClick)="selectTab($event)"
+      ></dx-tabs>
+      <div class="content-item" [ngSwitch]="currentTabId">
+        <div *ngSwitchCase="0">
+          <app-payment-history-projects [weekProjects]="weekHistory.projects"></app-payment-history-projects>
+        </div>
+        <div *ngSwitchCase="1">
+          <app-payment-history-employees [weekEmployees]="weekHistory.employees"></app-payment-history-employees>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

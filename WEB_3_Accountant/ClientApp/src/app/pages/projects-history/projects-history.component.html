@@ -1,0 +1,54 @@
+<h2 class="content-block">Projects history</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <div class="dx-fieldset">
+      <dx-responsive-box>
+        <dxi-row></dxi-row>
+
+        <dxi-col [ratio]="2"></dxi-col>
+        <dxi-col [ratio]="3"></dxi-col>
+        <dxi-col [ratio]="5"></dxi-col>
+        <dxi-item class="week-choose-box">
+          <dxi-location [row]="0" [col]="0"></dxi-location>
+          <div class="dx-fieldset-header week-choose">Choose a project</div>
+        </dxi-item>
+        <dxi-item>
+          <dxi-location [row]="0" [col]="1"></dxi-location>
+          <div class="dx-field">
+            <div class="dx-field-value">
+              <dx-select-box
+                label="Project"
+                [dataSource]="projectSelect"
+                (onValueChanged)="onValueChanged($event)"
+                [(value)]="projectSelected"
+                [searchEnabled]="true"
+              ></dx-select-box>
+            </div>
+          </div>
+        </dxi-item>
+      </dx-responsive-box>
+    </div>
+    <div>
+      <div class="responsive-paddings">
+        <dx-chart id="projects-payment-chart" [dataSource]="projectEmployees">
+          <dxo-size [height]="200"></dxo-size>
+          <dxo-adaptive-layout [width]="450"></dxo-adaptive-layout>
+          <dxo-zoom-and-pan argumentAxis="both"></dxo-zoom-and-pan>
+          <dxo-scroll-bar [visible]="true"></dxo-scroll-bar>
+          <dxo-tooltip
+            [enabled]="true"
+            [customizeTooltip]="customizeTooltip"
+          ></dxo-tooltip>
+          <dxi-series
+            argumentField="name"
+            valueField="workedHours"
+            name="Employees"
+            type="bar"
+            color="#ff5722"
+          >
+          </dxi-series>
+        </dx-chart>
+      </div>
+    </div>
+  </div>
+</div>

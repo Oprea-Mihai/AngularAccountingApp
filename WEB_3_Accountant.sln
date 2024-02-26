@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEB_3_Accountant", "WEB_3_Accountant\WEB_3_Accountant.csproj", "{531DF831-5DB2-49BD-86B3-873EDAAE80E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEB_3_Accountant.tests", "WEB_3_Accountant.tests\WEB_3_Accountant.tests.csproj", "{CDAD4F81-7DC8-4416-9027-F71F1111105C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{531DF831-5DB2-49BD-86B3-873EDAAE80E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531DF831-5DB2-49BD-86B3-873EDAAE80E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531DF831-5DB2-49BD-86B3-873EDAAE80E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531DF831-5DB2-49BD-86B3-873EDAAE80E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDAD4F81-7DC8-4416-9027-F71F1111105C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDAD4F81-7DC8-4416-9027-F71F1111105C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDAD4F81-7DC8-4416-9027-F71F1111105C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDAD4F81-7DC8-4416-9027-F71F1111105C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A54D7741-D883-4B22-A29F-0FE926D79B80}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+<h2 class="content-block">Project budgets</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <dx-data-grid
+        id="gridContainer"
+        [dataSource]="projectsBudget"
+        keyExpr="name"
+        [repaintChangesOnly]="true"
+        (onCellPrepared)="onCellPrepared($event)"
+        [showBorders]="true"
+        [showRowLines]="true"
+      >
+      <dxi-column dataField="name" caption="Name" alignment="center"></dxi-column>
+      <dxi-column dataField="initialBudget" caption="Initial Budget" alignment="center"></dxi-column>
+      <dxi-column dataField="spentMoney" caption="Spent Money" alignment="center"></dxi-column>
+      <dxi-column dataField="currentBudget" caption="Remaining Budget" alignment="center"></dxi-column>
+      <dxi-column dataField="isFinished" caption="Finished" alignment="center" cellTemplate="emoji"></dxi-column>
+      <div *dxTemplate="let cell of 'emoji'">
+        <div *ngIf="cell.value === true">
+          <img width="50" src="/assets/grin.png">
+        </div>
+        <div *ngIf="cell.value === false">
+          <img width="50" src="/assets/tired_face.png">
+        </div>
+      </div>
+
+
+
+
+      </dx-data-grid>
+  </div>
+</div>

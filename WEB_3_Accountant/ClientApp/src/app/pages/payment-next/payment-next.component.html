@@ -1,0 +1,57 @@
+<h2 class="content-block">Next payment</h2>
+<div class="content-block">
+  <div>
+    <div class="dx-card responsive-paddings">
+      <div
+        *ngIf="week.startDate != null; then nextPaymentBlock; else noPaymentBlock"
+      ></div>
+      <ng-template #nextPaymentBlock>
+        <div class="payment-title">
+          Week {{ week.startDate | date: "dd.MM.yy" }} -
+          {{ week.endDate | date: "dd.MM.yy" }} payment
+        </div>
+        <dx-data-grid
+          id="gridContainer"
+          [dataSource]="week.employees"
+          keyExpr="name"
+          [columns]="[
+            'name',
+            'totalHours',
+            'grossAmount',
+            'netAmount',
+            'taxPercentage'
+          ]"
+          [showBorders]="true"
+        >
+        </dx-data-grid>
+        <div class="dx-field">
+          <div class="width-50">
+            <div class="total-text">
+              Total gross Amount: {{ week.totalGrossAmount }}
+            </div>
+            <div class="total-text">
+              Total net Amount: {{ week.totalNetAmount }}
+            </div>
+          </div>
+          <div class="width-50 digital-signature">
+            <div class="signature-text">Accountant digital signature</div>
+            <div class="signature-checkbox">
+              <dx-check-box [(value)]="signature"></dx-check-box>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-button-container" *ngIf="signature== true">
+          <dx-button
+            type="success"
+            text="Make Payment"
+            stylingMode="contained"
+            (onClick)="makePayment($event)"
+          >
+          </dx-button>
+        </div>
+      </ng-template>
+      <ng-template #noPaymentBlock><app-payment-next-no-unpaid></app-payment-next-no-unpaid></ng-template>
+    </div>
+  </div>
+</div>

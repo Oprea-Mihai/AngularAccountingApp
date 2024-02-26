@@ -1,0 +1,31 @@
+<h2 class="content-block">Weekly cost history</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <div id="chart-demo">
+      <dx-chart palette="Carmine" [dataSource]="weekInfo">
+        <dxi-series *ngFor="let desc of totalDescription"
+                    [valueField]="desc.value"
+                    [name]="desc.name">
+        </dxi-series>
+        <dxo-common-series-settings #seriesSettings
+                                    argumentField="date"
+                                    [type]="types[0]">
+        </dxo-common-series-settings>
+        <dxo-margin [bottom]="20"></dxo-margin>
+        <dxo-argument-axis [valueMarginsEnabled]="false"
+                           discreteAxisDivisionMode="crossLabels">
+          <dxo-grid [visible]="true"></dxo-grid>
+        </dxo-argument-axis>
+        <dxo-legend verticalAlignment="bottom"
+                    horizontalAlignment="center"
+                    itemTextPosition="bottom">
+        </dxo-legend>
+
+        <dxo-export [enabled]="true"></dxo-export>
+        <dxo-tooltip [enabled]="true"></dxo-tooltip>
+      </dx-chart>
+    </div>
+  </div>
+</div>
+
+
